@@ -1,27 +1,22 @@
 import { connect } from 'amqplib';
 
-async function doEverything() {
-  const queue = 'tasks';
+//We've put all work in a function just so we can use async/await
+async function doReceivingDemo() {
+  const queueName = 'tasks';
   const conn = await connect('amqp://localhost');
 
-  const ch1 = await conn.createChannel();
-  await ch1.assertQueue(queue);
+  const channel = await conn.createChannel();
+  await channel.assertQueue(queueName, { durable: false });
 
   // Listener
-  ch1.consume(queue, (msg) => {
+  channel.consume(queueName, (msg) => {
     if (msg !== null) {
       console.log('Received:', msg.content.toString());
-      ch1.ack(msg);
+      channel.ack(msg);
     } else {
       console.log('Consumer cancelled by server');
     }
   });
 
-  // Sender
-  const ch2 = await conn.createChannel();
-
-  setInterval(() => {
-    ch2.sendToQueue(queue, Buffer.from('something to do: ' + performance.now()));
-  }, 2000);
 }
-doEverything();
+doReceivingDemo();
