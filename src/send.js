@@ -1,7 +1,7 @@
 
-const amqp = require('amqplib/callback_api');
+import { connect } from 'amqplib/callback_api.js';
 
-amqp.connect('amqp://localhost', function(error0, connection) {
+connect('amqp://localhost', function(error0, connection) {
     if (error0) {
         throw error0;
     }
