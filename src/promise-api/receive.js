@@ -2,7 +2,7 @@ import { connect } from 'amqplib';
 
 //We've put all work in a function just so we can use async/await
 async function doReceivingDemo() {
-  const queueName = 'tasks';
+  const queueName = 'neill-tasks';
   const conn = await connect('amqp://localhost');
 
   const channel = await conn.createChannel();

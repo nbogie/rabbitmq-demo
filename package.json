@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "start-receiver": "node src/promise-api/receive.js",
+    "start-sender": "node src/promise-api/send.js"
+  },
   "dependencies": {
     "amqplib": "^0.10.4"
   }
