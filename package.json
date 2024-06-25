@@ -5,8 +5,10 @@
     "license": "MIT",
     "type": "module",
     "scripts": {
-        "start-receiver": "node src/promise-api-1/receive.js",
-        "start-sender": "node src/promise-api-1/send.js",
+        "start-receiver-1": "node src/promise-api-1/receive.js",
+        "start-sender-1": "node src/promise-api-1/send.js",
+        "start-receiver-2": "node --env-file=.env src/promise-api-2/receive.js",
+        "start-sender-2": "node --env-file=.env src/promise-api-2/send.js",
         "format": "prettier --write ."
     },
     "dependencies": {
