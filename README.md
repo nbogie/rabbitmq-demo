@@ -31,4 +31,8 @@ yarn start-sender-2
 
 Then modify and write your own sender code.
 
+Try stopping the consumer and having the sender send messages when your consumer is stopped.
+
+_Then_ run the consumer. What do you notice?
+
 Then run the two processes on different machines! (e.g. with a colleague)
