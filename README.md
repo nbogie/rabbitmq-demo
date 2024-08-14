@@ -8,3 +8,27 @@ The content is modified from one of two sources:
 -   amqplib examples: https://www.npmjs.com/package/amqplib
 
 See also AMQPLib's port of rabbitmq tutorials: https://github.com/amqp-node/amqplib/tree/main/examples/tutorials
+
+# Suggested first demo
+
+```bash
+cp .env.example .env
+```
+
+then edit `.env` with a connection-string for an AMQP-broker
+
+Then run
+
+```bash
+yarn start-receiver-2
+```
+
+Then in another terminal run
+
+```bash
+yarn start-sender-2
+```
+
+Then modify and write your own sender code.
+
+Then run the two processes on different machines! (e.g. with a colleague)

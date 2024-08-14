@@ -2,6 +2,7 @@ import { connect } from "amqplib";
 import { getEnvironmentVariableOrFail } from "./getEnvironmentVariableOrFail.js";
 
 async function doReceivingDemo() {
+    console.log("Starting setup for consumer");
     const exchangeURL = getEnvironmentVariableOrFail("AMQP_EXCHANGE_URL");
     const conn = await connect(exchangeURL);
 
@@ -18,5 +19,7 @@ async function doReceivingDemo() {
             console.log("Consumer cancelled by server");
         }
     });
+    console.log("Registered consumer.  Awaiting messages!");
 }
+
 doReceivingDemo();
