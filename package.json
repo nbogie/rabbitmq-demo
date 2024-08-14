@@ -9,6 +9,7 @@
         "start-sender-1": "node src/promise-api-1/send.js",
         "start-receiver-2": "node --env-file=.env src/promise-api-2/receive.js",
         "start-sender-2": "node --env-file=.env src/promise-api-2/send.js",
+        "start-simplest-sender": "node --env-file=.env src/promise-api-2/simplestSend.js",
         "format": "prettier --write ."
     },
     "dependencies": {
